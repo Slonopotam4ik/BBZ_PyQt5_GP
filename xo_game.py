@@ -60,7 +60,7 @@ class XO_game(QWidget):
         self.list_of_window5 = list_of_window5
 
     def initUI(self):
-        uic.loadUi('x_0_frame.ui', self)
+        uic.loadUi('./ui/x_0_frame.ui', self)
 
         self.setWindowIcon(QtGui.QIcon('./texture/xo_texture/icon_x_0.png'))
 
@@ -374,4 +374,3 @@ class XO_game(QWidget):
 
     def exit_def(self):
         self.list_of_window5.setCurrentIndex(0)
-

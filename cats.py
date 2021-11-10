@@ -163,11 +163,13 @@ class Cat(QWidget):
         # Achievements
         self.cats_achievements = QLabel(self)
         self.cats_achievements.resize(260, 70)
+        self.cats_achievements.move(-300, 0)
         self.cats_achievements.setPixmap(QPixmap('./texture/achievements_texture/cats_played.png'))
         self.cats_achievements.hide()
 
         self.golodomor = QLabel(self)
         self.golodomor.resize(260, 70)
+        self.golodomor.move(-300, 0)
         self.golodomor.setPixmap(QPixmap('./texture/achievements_texture/golodomor.png'))
         self.golodomor.hide()
 
@@ -328,8 +330,8 @@ class Cat(QWidget):
         self.start_btn.setEnabled(False)
 
     def in_cats_animation(self):
+        self.cats_achievements.hide()
         self.cats_achievements.move(0, 0)
-        self.cats_achievements.show()
 
         animation_curve = QEasingCurve.InQuad
 
@@ -344,6 +346,7 @@ class Cat(QWidget):
         self.animation3.setKeyValueAt(0, QPoint(0, 0))
 
         animation1.start()
+        self.cats_achievements.show()
         self.cats_achievement_timer()
 
     def cats_achievement_timer(self):
@@ -356,8 +359,8 @@ class Cat(QWidget):
             self.animation3.start()
 
     def golodomor_animation(self):
+        self.golodomor.hide()
         self.golodomor.move(0, 0)
-        self.golodomor.show()
 
         animation_curve = QEasingCurve.InQuad
 
@@ -372,6 +375,7 @@ class Cat(QWidget):
         self.animation3_1.setKeyValueAt(0, QPoint(0, 0))
 
         animation1.start()
+        self.golodomor.show()
         self.golodomor_animation_timer()
 
     def golodomor_animation_timer(self):

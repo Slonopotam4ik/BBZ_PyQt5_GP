@@ -139,11 +139,13 @@ class XO_game(QWidget):
 
         self.xo_achievement = QLabel(self)
         self.xo_achievement.resize(260, 70)
+        self.xo_achievement.move(-300, 0)
         self.xo_achievement.setPixmap(QPixmap('./texture/achievements_texture/xo.png'))
         self.xo_achievement.hide()
 
         self.color_achievement = QLabel(self)
         self.color_achievement.resize(260, 70)
+        self.color_achievement.move(-300, 0)
         self.color_achievement.setPixmap(QPixmap('./texture/achievements_texture/color_soul.png'))
         self.color_achievement.hide()
 
@@ -189,11 +191,11 @@ class XO_game(QWidget):
         self.color_animation()
 
     def xo_animation(self):
+        self.xo_achievement.hide()
         if self.color_active:
             self.xo_achievement.move(0, 75)
         else:
             self.xo_achievement.move(0, 0)
-        self.xo_achievement.show()
 
         animation_curve = QEasingCurve.InQuad
 
@@ -214,6 +216,7 @@ class XO_game(QWidget):
             self.animation3.setKeyValueAt(0, QPoint(0, 0))
 
         animation1.start()
+        self.xo_achievement.show()
         self.xo_animation_timer()
 
     def xo_animation_timer(self):
@@ -230,8 +233,8 @@ class XO_game(QWidget):
 
     def color_animation(self):
         self.color_active = True
+        self.color_achievement.hide()
         self.color_achievement.move(0, 0)
-        self.color_achievement.show()
 
         animation_curve = QEasingCurve.InQuad
 
@@ -246,6 +249,7 @@ class XO_game(QWidget):
         self.animation3_1.setKeyValueAt(0, QPoint(0, 0))
 
         animation1.start()
+        self.color_achievement.show()
         self.color_animation_timer()
 
     def color_animation_timer(self):

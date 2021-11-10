@@ -21,6 +21,7 @@ from cats import Cat
 from loading import Loading
 from xo_game import XO_game
 
+
 class BBZ2(QWidget):
     def __init__(self):
         super().__init__()
@@ -32,7 +33,6 @@ class BBZ2(QWidget):
     def initUI(self):
         self.main_window = QWidget(self)
         self.main_window.resize(1000, 700)
-
 
         self.bg = QLabel(self)
         self.bg.setPixmap(QPixmap('./BBZ 2.0/menu_texture/menu_bg.png'))
@@ -46,6 +46,7 @@ class BBZ2(QWidget):
 
     def back(self):
         self.list_of_window5.setCurrentIndex(0)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

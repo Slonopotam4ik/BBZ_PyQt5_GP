@@ -43,6 +43,8 @@ class Example(QWidget):
         self.btn1.move(130, 100)
         self.btn1.clicked.connect(self.last_achievement)
 
+        self.bnt3 = QPushButton(self)
+    
     def imposible_achievement(self):
         # if not list_of_achievements[10]:
         #     list_of_achievements[10] = True

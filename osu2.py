@@ -185,11 +185,13 @@ class Osuu(QWidget):
         # achievements
         self.osu_achievement = QLabel(self)
         self.osu_achievement.resize(260, 70)
+        self.osu_achievement.move(-300, 0)
         self.osu_achievement.setPixmap(QPixmap('./texture/achievements_texture/osu.png'))
         self.osu_achievement.hide()
 
         self.count_20 = QLabel(self)
         self.count_20.resize(260, 70)
+        self.count_20.move(-300, 0)
         self.count_20.setPixmap(QPixmap('./texture/achievements_texture/right_on_target'))
         self.count_20.hide()
 
@@ -247,8 +249,8 @@ class Osuu(QWidget):
         self.count_text_print.setText(str(self.count))
 
     def osu_play(self):
+        self.osu_achievement.hide()
         self.osu_achievement.move(0, 0)
-        self.osu_achievement.show()
 
         animation_curve = QEasingCurve.InQuad
 
@@ -263,6 +265,7 @@ class Osuu(QWidget):
         self.animation3.setKeyValueAt(0, QPoint(0, 0))
 
         animation1.start()
+        self.osu_achievement.show()
         self.osu_achievement_timer()
 
     def osu_achievement_timer(self):
@@ -275,8 +278,8 @@ class Osuu(QWidget):
             self.animation3.start()
 
     def count_20_achievement(self):
+        self.count_20.hide()
         self.count_20.move(0, 0)
-        self.count_20.show()
 
         animation_curve = QEasingCurve.InQuad
 
@@ -291,6 +294,7 @@ class Osuu(QWidget):
         self.animation3_1.setKeyValueAt(0, QPoint(0, 0))
 
         animation1.start()
+        self.count_20.show()
         self.count_20_achievement_timer()
 
     def count_20_achievement_timer(self):

@@ -1,0 +1,5 @@
+Используемые библиотеки: 
+random
+PyQt5
+sys
+sqlite
